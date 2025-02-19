@@ -1,0 +1,49 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 20px;
+}
+
+
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #d1e3ff;
+}
+
+p {
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #6c93ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav span {
+  color: #888;
+}

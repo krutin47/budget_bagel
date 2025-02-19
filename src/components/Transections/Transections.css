@@ -1,0 +1,54 @@
+/* Transaction History */
+.transaction-history {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.transaction-history h3 {
+  font-size: 18px;
+  color: #93c5fd;
+  margin-bottom: 15px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #2c3e50;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+  color: #93c5fd;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+td {
+  padding: 10px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.transection_amount {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Category Icon */
+.category-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}

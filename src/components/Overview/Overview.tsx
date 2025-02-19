@@ -1,34 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import axiosInstance from '../../utils/AxiosInstance';
-import ExpensePieChart from '../Charts/PieChartDashboard'
-import { ExpenseMatrix, UserMatrix } from '../../types/financeMatrix';
-import { calculatePercentageChange } from '../../utils/calculateParcentageChange';
+import React from 'react'
+import { UserMatrix } from '../../types/financeMatrix';
 
 import './Overview.css'
 
-type Props = {}
+type Props = {
+  userMatrix: UserMatrix[]
+}
 
-const Overview = (props: Props) => {
-  const [userMatrix, setUserMatrix] = useState<UserMatrix[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axiosInstance.get('/getExpenseMetrix');
-        const data: UserMatrix[] = await response.data;
-        
-        const updatedData = data.map((expenseItem) => ({
-          ...expenseItem,
-          ...calculatePercentageChange(expenseItem.amount, expenseItem.lastMonth, expenseItem.isGoodIfIncreased)
-        }))
-        setUserMatrix(updatedData);        
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+const Overview = ({ userMatrix }: Props) => {
 
   return (
     <div>
@@ -43,14 +22,6 @@ const Overview = (props: Props) => {
           </div>
         ))}
       </section>
-
-      {/* <ExpensePieChart expenseMatrix={userMatrix}/>
-
-      <p>Current Total Money:{userMatrix.currentTotalMoney}</p>
-      <p>Current Total Earning:{userMatrix.currentTotalEarning}</p>
-      <p>Last Month Expense:{userMatrix.lastMonthExpense}</p>
-      <p>Current Month Expense:{userMatrix.currentMonthExpense}</p> */}
-      
     </div>
   )
 }

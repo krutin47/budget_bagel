@@ -1,0 +1,148 @@
+/* Balance Dashboard Layout */
+.balance-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Balance Trends Section */
+.balance-trends {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+.balance-header {
+  width: 300px;
+  height: auto;
+  padding-left: 10px;
+}
+
+.balance-header h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #93c5fd;
+}
+
+.balance-amount {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.balance-change {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Positive Change */
+.positive {
+  color: #2ecc71;
+}
+
+/* Placeholder for Graph */
+.graph-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 250px; 
+  width: 100%;
+}
+
+.recharts-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.center-label {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Monthly Expenses Breakdown */
+.expenses-breakdown {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.expenses-breakdown h3 {
+  font-size: 18px;
+  color: #93c5fd;
+}
+
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-segment {
+  height: 100%;
+}
+
+/* Expenses List */
+.expenses-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.category {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.amount {
+  padding-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.percentage {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .balance-container {
+      grid-template-columns: 1fr;
+  }
+}

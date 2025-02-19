@@ -1,7 +1,9 @@
 export const calculatePercentageChange = (currentValue: number, oldValue: number, isGoodIfIncreased: boolean) => {
-
-  const percentageChange = ((currentValue - oldValue) / oldValue) * 100;
-  const change = `${isGoodIfIncreased ? '⬆' : '⬇'} ${Math.abs(percentageChange).toFixed(2)}% Last month ${oldValue}`
+  if (currentValue === oldValue) return { change: '0%', isPositive: true} 
   
-  return change;
+  const change = ((currentValue - oldValue) / oldValue) * 100;
+  const isPositive = isGoodIfIncreased ? change >= 0 : change >= 0;
+  const newQuantText = `${isPositive ? '⬆' : '⬇'} ${Math.abs(change).toFixed(2)}%`
+  
+  return {change: newQuantText, isPositive};
 }

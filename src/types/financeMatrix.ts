@@ -7,4 +7,6 @@ export type UserMatrix = {
   'amount': number,
   'lastMonth': number,
   'isGoodIfIncreased': boolean,
+  'change': string,
+  'isPositive'?: boolean
 }

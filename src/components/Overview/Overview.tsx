@@ -16,7 +16,12 @@ const Overview = (props: Props) => {
       try {
         const response = await axiosInstance.get('/getExpenseMetrix');
         const data: UserMatrix[] = await response.data;
-        setUserMatrix(data);        
+        
+        const updatedData = data.map((expenseItem) => ({
+          ...expenseItem,
+          ...calculatePercentageChange(expenseItem.amount, expenseItem.lastMonth, expenseItem.isGoodIfIncreased)
+        }))
+        setUserMatrix(updatedData);        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -31,9 +36,9 @@ const Overview = (props: Props) => {
         {userMatrix.map((stat, index) => (
           <div key={index} className="stat-card">
             <h3>{stat.title}</h3>
-            <p className="amount">{stat.amount}</p>
-            <p className={`change ${stat.isGoodIfIncreased ? 'positive' : 'negative'}`}>
-              {calculatePercentageChange(stat.amount, stat.lastMonth, stat.isGoodIfIncreased)}
+            <p className="amount">{stat.amount.toLocaleString()}</p>
+            <p className={`change ${stat.isPositive === stat.isGoodIfIncreased ? 'positive' : 'negative'}`}>
+              {stat.change} <span>Last month $ {stat.lastMonth.toLocaleString()}</span>
             </p>
           </div>
         ))}

@@ -25,7 +25,9 @@ const ExpensePieChart = ({ expenseMatrix }: ExpensePieChartProps) => {
       }, 50);
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval)
+    }
   }, [currentMonthExpense, targetExpense]);
 
   const data = [
